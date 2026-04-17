@@ -1,4 +1,4 @@
-FROM ghcr.io/itf-solutions/github-actions-runner:base
+FROM ghcr.io/itf-solutions/github-actions-runner-base:latest
 
 RUN sudo apt-get update -qq \
     && sudo apt-get install -y --no-install-recommends \

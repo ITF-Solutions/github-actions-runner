@@ -27,10 +27,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v6
         with:
-          images: ghcr.io/itf-solutions/github-actions-runner
+          images: ghcr.io/itf-solutions/github-actions-runner-base
           tags: |
-            type=raw,value=base
-            type=raw,value=base-${{ github.sha }}
+            type=raw,value=latest
+            type=raw,value=${{ github.sha }}
 
       - name: Build and push base
         uses: docker/build-push-action@v7
@@ -59,10 +59,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v6
         with:
-          images: ghcr.io/itf-solutions/github-actions-runner
+          images: ghcr.io/itf-solutions/github-actions-runner-deploy
           tags: |
-            type=raw,value=deploy
-            type=raw,value=deploy-${{ github.sha }}
+            type=raw,value=latest
+            type=raw,value=${{ github.sha }}
 
       - name: Build and push deploy
         uses: docker/build-push-action@v7
