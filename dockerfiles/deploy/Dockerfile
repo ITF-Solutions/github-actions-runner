@@ -6,7 +6,7 @@ RUN sudo apt-get update -qq \
         docker.io \
         docker-compose-v2 \
     && sudo apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && sudo rm -rf /var/lib/apt/lists/*
 
 RUN pip install --quiet --break-system-packages paramiko pyyaml
 
