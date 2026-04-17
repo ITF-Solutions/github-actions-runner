@@ -3,8 +3,8 @@ FROM ghcr.io/itf-solutions/github-actions-runner-base:latest
 RUN sudo apt-get update -qq \
     && sudo apt-get install -y --no-install-recommends \
         python3-pip \
-        docker-ce-cli \
-        docker-compose-plugin \
+        docker.io \
+        docker-compose-v2 \
     && sudo apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
