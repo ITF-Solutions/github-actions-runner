@@ -10,4 +10,9 @@ RUN sudo apt-get update -qq \
 
 RUN pip install --quiet --break-system-packages paramiko pyyaml
 
+RUN curl -1sLf 'https://artifacts-cli.infisical.com/setup.deb.sh' | sudo bash \
+    && sudo apt-get install -y --no-install-recommends infisical \
+    && sudo apt-get clean \
+    && sudo rm -rf /var/lib/apt/lists/*
+
 ENTRYPOINT ["/home/runner/run.sh"]
